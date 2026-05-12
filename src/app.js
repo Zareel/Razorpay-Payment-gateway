@@ -6,6 +6,7 @@ const app = express()
 // middlewares
 app.use(express.json())
 app.use(morgan("dev"))
+app.use(express.urlencoded({extended:true})) // to make data accessable from the body
 
 // routes
 app.use("/api/v1/payment", paymentRouter)
